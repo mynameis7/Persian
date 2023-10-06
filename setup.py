@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 requirements = []
 with open('requirements.txt') as f:
@@ -19,7 +19,8 @@ setup(
     include_package_data=True,
 
     install_requires=requirements,
-
+    # this is what makes the setup install work, currently broken in upstream
+    packages=find_packages(),
     # this will be dead next month with the new pip version
     dependency_links=[
         'discord.py @ '
