@@ -1048,6 +1048,12 @@ class Raid:
             return
         if isinstance(emoji, int):
             emoji = self.bot.get_emoji(emoji)
+        else:
+            try:
+                result = int(emoji)
+                emoji = self.bot.get_emoji(result)
+            except ValueError:
+                pass
         try:
             await message.remove_reaction(emoji, user)
         except:

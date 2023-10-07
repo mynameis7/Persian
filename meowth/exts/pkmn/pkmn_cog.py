@@ -194,13 +194,14 @@ class Pokemon():
     async def boost_weather(self):
         type1 = await self._type()
         type2 = await self._type2()
-        types_table = self.bot.dbi.table('types')
-        weather_query = types_table.query('weather')
+        weather = []
+        if type1 is None:
+            pass
         if not type2:
-            weather_query.where(typeid=type1)
+            weather.append(self.bot.config.type_emoji.get(type1.replace("POKEMON_TYPE_","").lower()).get("weather"))
         else:
-            weather_query.where((types_table['typeid']==type1, types_table['typeid']==type2))
-        weather = await weather_query.get_values()
+            weather.append(self.bot.config.type_emoji.get(type1.replace("POKEMON_TYPE_","").lower()).get("weather"))
+            weather.append(self.bot.config.type_emoji.get(type2.replace("POKEMON_TYPE_","").lower()).get("weather"))
         return weather
     
     async def weather_str(self):
@@ -220,13 +221,11 @@ class Pokemon():
     async def type_emoji(self):
         emoji_string = ''
         type1 = await self._type()
-        type1_ref = self.bot.dbi.table('types').query().select('emoji').where(typeid=type1)
-        type1_emoji = await type1_ref.get_value()
+        type1_emoji = self.bot.config.type_emoji.get(type1.replace("POKEMON_TYPE_","").lower()).get("emoji")
         type2 = await self._type2()
         type2_emoji = ''
         if type2:
-            type2_ref = self.bot.dbi.table('types').query().select('emoji').where(typeid=type2)
-            type2_emoji = await type2_ref.get_value()
+            type2_emoji = self.bot.config.type_emoji.get(type2.replace("POKEMON_TYPE_","").lower()).get("emoji")
         emoji_string += type1_emoji
         emoji_string += type2_emoji
         return emoji_string
@@ -460,7 +459,7 @@ class Pokemon():
             if i == 4:
                 emoji_string += '\n'
             type_ref = self.bot.dbi.table('types').query()
-            emoji = await type_ref.select('emoji').where(typeid=type_tuple[0]).get_value()
+            emoji = self.bot.config.type_emoji.get(type_tuple[0].replace("POKEMON_TYPE_","").lower()).get("emoji")
             if type_tuple[1] == 4:
                 emoji += 'x4'
                 emoji_string += emoji
@@ -486,8 +485,7 @@ class Pokemon():
         for type_tuple in types_sorted:
             if i == 4:
                 emoji_string += '\n'
-            type_ref = self.bot.dbi.table('types').query()
-            emoji = await type_ref.select('emoji').where(typeid=type_tuple[0]).get_value()
+            emoji = self.bot.config.type_emoji.get(type_tuple[0].replace("POKEMON_TYPE_","").lower()).get("emoji")
             if type_tuple[1] == -4:
                 emoji += 'x4'
                 emoji_string += emoji
@@ -1048,8 +1046,7 @@ class Move:
     
     async def emoji(self):
         _type = await self._type()
-        type_ref = self.bot.dbi.table('types').query().where(typeid=_type)
-        emoji = await type_ref.select('emoji').get_value()
+        emoji = self.bot.config.type_emoji.get(_type.replace("POKEMON_TYPE_","").lower()).get("emoji")
         return emoji
     
     

@@ -26,7 +26,7 @@ dbdocid = 'google_sheet_id_here'
 emoji = {
     'maybe': '🙋',
     'coming': '🚗',
-    'here': '<:here:350686955316445185>',
+    'here': '<:here:1160071226488803359>',
     'remote': '🛰',
     'invite': '✉',
     'cancel': '❌'
@@ -45,9 +45,9 @@ team_colours = {
 }
 
 team_emoji = {
-    "mystic"   : "<:mystic:351758303912656896>",
-    "valor"    : "<:valor:351758298975830016>",
-    "instinct" : "<:instinct:351758298627702786>",
+    "mystic"   : "<:mystic:1159751462851719248>",
+    "valor"    : "<:valor:1159751395260497980>",
+    "instinct" : "<:instinct:1159752582852530176>",
     "unknown" : "\u2754"
 }
 
@@ -62,29 +62,30 @@ allow_assume = {
 
 status_emoji = {
     "omw"     : ":omw:",
-    "here_id" : ":here:"
+    "here" : ":here:"
 }
 
 type_emoji = {
-    "normal"   : "<:normal:351758296409178112>",
-    "fire"     : "<:fire1:351758296044142624>",
-    "water"    : "<:water:351758295142498325>",
-    "electric" : "<:electric:351758295414865921>",
-    "grass"    : "<:grass:351758295729700868>",
-    "ice"      : "<:ice:351758296111120384>",
-    "fighting" : "<:fighting:351758296090148864>",
-    "poison"   : "<:poison:351758295976902679>",
-    "ground"   : "<:ground:351758295968776194>",
-    "flying"   : "<:flying:351758295033446400>",
-    "psychic"  : "<:psychic:351758294744039426>",
-    "bug"      : "<:bug1:351758295196893185>",
-    "rock"     : "<:rock:351758296077697024>",
-    "ghost"    : "<:ghost1:351758295683432449>",
-    "dragon"   : "<:dragon:351758295612129280>",
-    "dark"     : "<:dark:351758294316089356>",
-    "steel"    : "<:steel:351758296425955328>",
-    "fairy"    : "<:fairy:351758295070932992>"
+    "bug"      : { "typeid" : "POKEMON_TYPE_BUG",      "emoji" : "<:bug:1159751555491311696>",     "weather" : "RAINY" },
+    "dark"     : { "typeid" : "POKEMON_TYPE_DARK",     "emoji" : "<:dark:1159751556254683137>",     "weather" : "FOG" },
+    "dragon"   : { "typeid" : "POKEMON_TYPE_DRAGON",   "emoji" : "<:dragon:1159751558578323477>",   "weather" : "WINDY" },
+    "electric" : { "typeid" : "POKEMON_TYPE_ELECTRIC", "emoji" : "<:electric:1159751563158507540>", "weather" : "RAINY" },
+    "fairy"    : { "typeid" : "POKEMON_TYPE_FAIRY",    "emoji" : "<:fairy:1159751557701705800>",    "weather" : "OVERCAST" },
+    "fighting" : { "typeid" : "POKEMON_TYPE_FIGHTING", "emoji" : "<:fighting:1159751521739735090>", "weather" : "OVERCAST" },
+    "fire"     : { "typeid" : "POKEMON_TYPE_FIRE",     "emoji" : "<:fire:1159753585203085332>",    "weather" : "CLEAR" },
+    "flying"   : { "typeid" : "POKEMON_TYPE_FLYING",   "emoji" : "<:flying:1159751559270379541>",   "weather" : "WINDY" },
+    "ghost"    : { "typeid" : "POKEMON_TYPE_GHOST",    "emoji" : "<:ghost:1159751520942837760>",   "weather" : "FOG" },
+    "grass"    : { "typeid" : "POKEMON_TYPE_GRASS",    "emoji" : "<:grass:1159751522834452553>",    "weather" : "CLEAR" },
+    "ground"   : { "typeid" : "POKEMON_TYPE_GROUND",   "emoji" : "<:ground:1159752578578526208>",   "weather" : "CLEAR" },
+    "ice "     : { "typeid" : "POKEMON_TYPE_ICE",      "emoji" : "<:ice:1159751525191647272>",      "weather" : "SNOW" },
+    "normal"   : { "typeid" : "POKEMON_TYPE_NORMAL",   "emoji" : "<:normal:1159752581766189056>",   "weather" : "PARTLY_CLOUDY" },
+    "poison"   : { "typeid" : "POKEMON_TYPE_POISON",   "emoji" : "<:poison:1159752579992014890>",   "weather" : "OVERCAST" },
+    "psychic"  : { "typeid" : "POKEMON_TYPE_PSYCHIC",  "emoji" : "<:psychic:1159751562047008810>",  "weather" : "WINDY" },
+    "rock"     : { "typeid" : "POKEMON_TYPE_ROCK",     "emoji" : "<:rock:1159751523522326578>",     "weather" : "PARTLY_CLOUDY" },
+    "steel"    : { "typeid" : "POKEMON_TYPE_STEEL",    "emoji" : "<:steel:1159751525925662810>",    "weather" : "SNOW" },
+    "water "   : { "typeid" : "POKEMON_TYPE_WATER",    "emoji" : "<:water:1159751524235345980>",    "weather" : "RAINY" }
 }
+
 
 raid_times = {
     1: (60, 45),
