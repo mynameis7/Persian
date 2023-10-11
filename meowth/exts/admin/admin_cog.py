@@ -302,7 +302,7 @@ class AdminCog(Cog):
         insert.row(guild_id=guild_id, version=ctx.bot.version)
         await insert.commit(do_update=True)
         try:
-            await ctx.guild.me.edit(nick='Meowth 3.0')
+            await ctx.guild.me.edit(nick='Persian')
         except:
             pass
         channel_id = ctx.channel.id
@@ -680,7 +680,7 @@ class AdminCog(Cog):
         insert.row(guild_id=guild_id, version=ctx.bot.version)
         await insert.commit(do_update=True)
         try:
-            await ctx.guild.me.edit(nick='Meowth 3.0')
+            await ctx.guild.me.edit(nick='Persian')
         except:
             pass
         old_shard_id = (guild_id >> 22) % 2
@@ -944,17 +944,17 @@ class AdminCog(Cog):
     @command()
     @checks.is_admin()
     async def configure(self, ctx):
-        """Gives information about how to configure Meowth 3.0."""
+        """Gives information about how to configure Persian."""
         guild_id = ctx.guild.id
         settings = ctx.bot.dbi.table('guild_settings')
         insert = settings.insert
         insert.row(guild_id=guild_id, version=ctx.bot.version)
         await insert.commit(do_update=True)
         try:
-            await ctx.guild.me.edit(nick='Meowth 3.0')
+            await ctx.guild.me.edit(nick='Persian')
         except:
             pass
-        await ctx.send('In order to set up or change your configuration for Meowth 3.0, '
+        await ctx.send('In order to set up or change your configuration for Persian, '
             f'you will need to use the **{ctx.prefix}enable**, **{ctx.prefix}disable**, '
             f'and **{ctx.prefix}setlocation** commands. First, in any channel you want to use '
             f'for reporting raids, wilds, or research, use the {ctx.prefix}setlocation '
@@ -963,6 +963,6 @@ class AdminCog(Cog):
             f'are enabled with `{ctx.prefix}enable users`. See `{ctx.prefix}help setlocation` '
             f'and `{ctx.prefix}help enable` for more information. \n\n**NOTE:** If you have an existing '
             f'Meowth 2.0 configuration, please use `{ctx.prefix}importconfig` to attempt to '
-            'import your settings before attempting to configure Meowth 3.0. If this is not done, '
+            'import your settings before attempting to configure Persian. If this is not done, '
             'you may find that both Meowth versions attempt to respond to your commands.')
     
